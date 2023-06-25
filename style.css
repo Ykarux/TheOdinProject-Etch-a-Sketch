@@ -1,0 +1,8 @@
+.container {
+    height: 960px;
+}
+
+.line {
+    width: 960px;
+    display: flex;
+}
