@@ -1,6 +1,10 @@
 const container = document.querySelector('.container')
 let actualSize = 16;
 
+function getRandomRGB() {
+	return 'rgb(' + (Math.random() * 256) + ',' + (Math.random() * 256) + ',' + (Math.random() * 256) + ')'
+}
+
 function deleteGrid() {
 	while (container.firstChild) {
 		container.removeChild(container.firstChild)
@@ -23,7 +27,7 @@ function createGrid(numberOfSquare) {
 	const squareList = document.querySelectorAll('div.square')
 	squareList.forEach(square => {
 		square.addEventListener('mouseover', e => {
-			e.target.style.backgroundColor = 'blue'
+			e.target.style.backgroundColor = getRandomRGB()
 		})
 	})
 }
