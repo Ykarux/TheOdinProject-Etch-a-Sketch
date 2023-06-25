@@ -1,8 +1,16 @@
 .container {
     height: 960px;
+    border: 1px solid black;
 }
 
 .line {
     width: 960px;
     display: flex;
+}
+
+.container-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 20px;
 }

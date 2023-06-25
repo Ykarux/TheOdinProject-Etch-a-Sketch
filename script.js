@@ -1,4 +1,11 @@
 const container = document.querySelector('.container')
+let actualSize = 16;
+
+function deleteGrid() {
+	while (container.firstChild) {
+		container.removeChild(container.firstChild)
+	}
+}
 
 function createGrid(numberOfSquare) {
 	for (let i = 0; i < numberOfSquare; i++) {
@@ -21,4 +28,24 @@ function createGrid(numberOfSquare) {
 	})
 }
 
-createGrid(16)
+const clearButton = document.querySelector('#clear')
+clearButton.addEventListener('click', e => {
+	deleteGrid()
+	createGrid(actualSize)
+})
+
+const newGrid = document.querySelector('#newGrid')
+newGrid.addEventListener('click', e => {
+	actualSize = prompt('Enter grid size')
+	deleteGrid()
+	createGrid(actualSize)
+})
+
+const reset = document.querySelector('#reset')
+reset.addEventListener('click', e => {
+	actualSize = 16
+	deleteGrid()
+	createGrid(actualSize)
+})
+
+createGrid(actualSize)
